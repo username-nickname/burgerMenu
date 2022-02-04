@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+img {
+    max-width: 100%;
+    user-select: none;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+input,button:focus {
+    outline: none!important
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+
+main {
+    padding-top: 60px;
+}
+.header_body {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.header_body::before {
+    content: "";
+    background-color: red;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+.menu {
+    display: flex;
+}
+.menu__link {
+    text-transform: uppercase;
+    margin-right: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+.menu__link:hover {
+    color: navajowhite;
+    transition: all 0.3s linear;
+    text-decoration: none;
+}
+.nav-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 4;
+}
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 4;
+    position: relative;
+}
+.lock {
+    overflow: hidden;
+}
+/*
+.menu-block {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+}*/
+@media (max-width: 700px) {
+.logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 4;
+    position: relative;
+}
+.nav-bar {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: -100%;
+    transition: all 0.5s ease;
+    display: block;
+}
+.nav-bar.active {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    transition: all 0.5s ease;
+    display: block;
+    overflow-y: auto;
+}
+.menu {
+    display: block;
+    top: 60px;
+    left: 20px;
+    position: absolute;
+}
+.burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 25px;
+    z-index: 4;
+
+}
+.burger.active span{
+    transform: rotate(45deg);
+}
+.burger.active:after{
+    transform: rotate(-45deg);
+    bottom: 10px;
+} 
+.burger.active:before{
+    opacity: 0;
+} 
+.burger:before,
+.burger:after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    right: 15px;
+    transition: all 0.5s ease;
+}
+.burger span {
+    position: absolute;
+    background-color: white;
+    right: 15px;
+    width: 100%;
+    height: 2px;
+    top: 12px;
+    transition: all 0.5s ease;
+}
+.burger:before {
+    top: 0;
+}
+.burger:after {
+    bottom: 0;
+}
+}
